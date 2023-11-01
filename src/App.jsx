@@ -1,5 +1,5 @@
 import ItemLayout from "./components/ItemLayout"
-import Navbar from "./components/navbar"
+import Navbar from "./components/Navbar"
 import { Toaster } from "react-hot-toast"
 
 function App() {
