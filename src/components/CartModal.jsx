@@ -55,9 +55,13 @@ export default function CartModal() {
                                 <p>{item.name}</p>
                                 <div className='flex items-center h-8  gap-2'>
                                 <p>
-                                <span>${item.price * item.discount}</span>
+                                <span>{
+                                    currencyFormat(item.price * item.discount)
+                                    }</span>
                                 <span> x {item.quantity}</span>
-                                <span className='font-semibold text-slate-800'> ${item.quantity*item.price*item.discount}</span>
+                                <span className='font-semibold text-slate-800'> {
+                                   currencyFormat(item.quantity*item.price*item.discount)
+                                    }</span>
                                 </p>
                                 
                                 </div>
