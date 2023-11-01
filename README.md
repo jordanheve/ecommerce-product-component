@@ -17,8 +17,9 @@ Users should be able to:
 ### Screenshot
 - Desktop design
 ![](./public/desktop-design.jpg)
--Mobile
-![](.public/mobile-design.jpg)
+
+- Mobile
+![](./public/mobile-design.jpg)
 
 
 ### Links
