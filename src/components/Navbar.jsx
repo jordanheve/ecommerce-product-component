@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="items-center flex gap-5 text-slate-500 text-sm ">
           <MenuModal />
           <a href="#">
-        <img src="/logo.svg" alt="snickers logo" className=""/>
+        <img src="logo.svg" alt="snickers logo" className=""/>
           </a>
         <ul className="flex gap-6 h-20 items-center max-md:hidden">
           <li className= {liClass}>
@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex flex-end items-center gap-6 relative">
           <CartModal/>
           <div>
-            <img className='rounded-full hover:border-orange-500 border-2 cursor-pointer h-10' src='/image-avatar.png'/>
+            <img className='rounded-full hover:border-orange-500 border-2 cursor-pointer h-10' src='image-avatar.png'/>
           </div>
         </div>
     </header>

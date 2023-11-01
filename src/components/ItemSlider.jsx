@@ -61,16 +61,16 @@ export default function ItemSlider() {
         
         <div className='grid grid-cols-4 gap-4 cursor-pointer max-md:hidden'>
           <div className={`w-full rounded-2xl border-2 ${index === 0 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 0 ? classActive : ''} `} src='/image-product-1-thumbnail.jpg' onClick={() => setIndex(0)} />
+            <img className={`${classThumbnail} ${index === 0 ? classActive : ''} `} src='image-product-1-thumbnail.jpg' onClick={() => setIndex(0)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 1 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 1 ? classActive : ''}`} src='/image-product-2-thumbnail.jpg' onClick={() => setIndex(1)} />
+            <img className={`${classThumbnail} ${index === 1 ? classActive : ''}`} src='image-product-2-thumbnail.jpg' onClick={() => setIndex(1)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 2 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 2 ? classActive : ''}`} src='/image-product-3-thumbnail.jpg' onClick={() => setIndex(2)} />
+            <img className={`${classThumbnail} ${index === 2 ? classActive : ''}`} src='image-product-3-thumbnail.jpg' onClick={() => setIndex(2)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 3 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 3 ? classActive : ''}`} src='/image-product-4-thumbnail.jpg' onClick={() => setIndex(3)} />
+            <img className={`${classThumbnail} ${index === 3 ? classActive : ''}`} src='image-product-4-thumbnail.jpg' onClick={() => setIndex(3)} />
           </div>
         </div>
       </div>
@@ -91,10 +91,10 @@ export default function ItemSlider() {
         open={open}
         close={() => setOpen(false)}
         slides={[
-          { src: "/image-product-1.jpg" },
-          { src: "/image-product-2.jpg" },
-          { src: "/image-product-3.jpg" },
-          { src: "/image-product-4.jpg" },
+          { src: "image-product-1.jpg" },
+          { src: "image-product-2.jpg" },
+          { src: "image-product-3.jpg" },
+          { src: "image-product-4.jpg" },
         ]}
       />
     </>
