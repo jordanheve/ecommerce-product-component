@@ -1,27 +1,42 @@
 import { createContext, useState } from "react";
-import product from "../data/data";
+import toast from 'react-hot-toast'
 
 const ItemsContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [order, setOrder] = useState([]);
 
-  const handleAddToCart = ({ ...product }) => {
+  const handleAddToCart = ({ ...product }, quantity) => {
+    
     const existingProductIndex = order.findIndex((orderProduct) => orderProduct.id === product.id);
-    if (existingProductIndex !== -1) {
-      const updatedOrder = [...order];
-      updatedOrder[existingProductIndex].quantity += 1;
+    if (quantity > 0) {
+      
+      if (existingProductIndex !== -1) {
+        const updatedOrder = [...order];
+        updatedOrder[existingProductIndex].quantity = quantity;
       setOrder(updatedOrder);
+      toast.success('Product Updated')
+      
     } else {
-      setOrder([...order, product]);
+      setOrder([...order, {quantity, ...product}]);
+      toast.success('Product Added')
     }
+  } else {
+    toast.error("Product can't be 0 ")
+  }
+} 
+  
+  const removeFromCart = (id) => {
+    const filteredOrder = order.filter(order => order.id !==id)
+    setOrder(filteredOrder)
   }
 
-  return (
+  return ( 
     <ItemsContext.Provider
       value={{
         order,
-        handleAddToCart
+        handleAddToCart,
+        removeFromCart
       }}
     >
       {children}

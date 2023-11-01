@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import IconPrevious from '../assets/icon-previous.svg?react'
+import IconNext from '../assets/icon-next.svg?react'
+
 
 export default function ItemSlider() {
   const [open, setOpen] = useState(false);
@@ -10,20 +13,55 @@ export default function ItemSlider() {
 
   const plugins = [Thumbnails];
 
-  const classThumbnail = "hover:opacity-90 rounded-xl max-h-24 w-full";
+  const classThumbnail = "object-cover hover:opacity-90 rounded-xl max-h-24 w-full";
   const classActive = 'opacity-70';
+  const classImgBtn = 'absolute top-[calc(50%-1rem)] bg-white h-8 w-8 flex items-center justify-center rounded-full'
+  const handleNextImg = () => {
+    if(index > 2) {
+      setIndex(0)
+    } else  {
+      setIndex(index+1)
+    }
+  }
 
+  const handlePrevImg = () => {
+    if (index < 1) {
+      setIndex(3)
+    } else {
+      setIndex(index-1)
+    }
+  }
   return (
     <>
-      <div className='w-96'>
+      <div className='w-2/5 max-md:w-4/6 max-sm:w-full max-sm:h-2/5 '>
+      <div className='relative h-full   '>
         <img
-          className='w-full rounded-xl mb-5 border-orange-500'
+          className='h-full cursor-pointer w-full max-sm:object-cover  rounded-xl max-sm:rounded-none mb-5 border-orange-500'
           src={`image-product-${index + 1}.jpg`}
           onClick={() => setOpen(true)}
         />
-        <div className='flex cursor-pointer gap-4 max-w-96'>
+        <div className='md:hidden'>
+        <button 
+        onClick={handlePrevImg}
+        className={"left-2 "+classImgBtn} >
+        <div className='mr-1'>
+        <IconPrevious className="stroke-slate-800 hover:stroke-orange-500"/>
+        </div>
+        </button>
+        <button
+        className={'right-2 '+classImgBtn} 
+        onClick={handleNextImg}
+        >
+         <div className='ml-1'>
+        <IconNext className="stroke-slate-800 hover:stroke-orange-500"/>
+        </div>
+        </button>
+        </div>
+      </div>
+        
+        <div className='grid grid-cols-4 gap-4 cursor-pointer max-md:hidden'>
           <div className={`w-full rounded-2xl border-2 ${index === 0 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 0 ? classActive : ''}`} src='/image-product-1-thumbnail.jpg' onClick={() => setIndex(0)} />
+            <img className={`${classThumbnail} ${index === 0 ? classActive : ''} `} src='/image-product-1-thumbnail.jpg' onClick={() => setIndex(0)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 1 ? "border-orange-500" : "border-transparent"}`}>
             <img className={`${classThumbnail} ${index === 1 ? classActive : ''}`} src='/image-product-2-thumbnail.jpg' onClick={() => setIndex(1)} />

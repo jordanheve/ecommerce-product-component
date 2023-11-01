@@ -1,34 +1,37 @@
-import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import CartModal from './CartModal'
+import MenuModal from './MenuModal'
 export default function Navbar() {
+  const liClass = 'h-full flex items-center border-transparent border-y-4 hover:border-b-orange-400'
   return (
-    <header className="flex items-center justify-between border-slate-200 border-b-[1px] py-4">
+    <header className="flex items-center justify-between border-slate-200 border-b-[1px] h-20 px-2">
+
         <div className="items-center flex gap-5 text-slate-500 text-sm ">
+          <MenuModal />
           <a href="#">
         <img src="/logo.svg" alt="snickers logo" className=""/>
           </a>
-        <ul className="flex gap-4">
-          <li>
-            <a href="#">
+        <ul className="flex gap-6 h-20 items-center max-md:hidden">
+          <li className= {liClass}>
+            <a href="#" className='' >
             Collections
             </a>
           </li>
-          <li>
+          <li className={liClass}>
             <a href="#">
             Men
             </a>
           </li>
-          <li>
+          <li className= {liClass}>
             <a href="#">
             Women
             </a>
           </li>
-          <li>
+          <li className= {liClass}>
             <a href="#">
             About
             </a>
           </li>
-          <li>
+          <li className= {liClass}>
             <a href="#">
             Contact
             </a>
