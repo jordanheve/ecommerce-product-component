@@ -9,7 +9,8 @@ export default defineConfig({
     svgr({
       svgrOptions: {
 
-      },
+      }, 
     })
   ],
+  base: '/ecommerce-product-component'
 })
