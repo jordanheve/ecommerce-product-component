@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon  } from "@heroicons/react/24/outline";
 export default function MenuModal() {
   return (
     <Popover className='md:hidden '>
-      <Popover.Button>
+      <Popover.Button aria-label="Open navigation menu">
         
         <Bars3Icon className="h-6 mt-2"/>
     
@@ -21,7 +21,7 @@ export default function MenuModal() {
       >
         <Popover.Panel className='absolute top-0  left-0 z-30 w-2/3'>
             <div className="bg-white h-screen pl-6 pt-20 ">
-            <Popover.Button>
+            <Popover.Button aria-label="Close navigation menu">
             <XMarkIcon className="h-6 absolute top-6 left-5"/>
             </Popover.Button>
             <ul className="flex flex-col gap-6 h-20 font-bold text-slate-800">

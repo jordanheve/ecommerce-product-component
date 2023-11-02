@@ -18,11 +18,11 @@ export default function ItemPrice() {
         className='text-orange-400 font-bold uppercase'
         >
             {company}</p>
-        <p 
+        <h1 
         className='font-bold text-4xl md:text-5xl'
         >
             {name}
-        </p>
+        </h1>
         <p 
         className='text-slate-600'
         >

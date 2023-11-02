@@ -37,11 +37,13 @@ export default function ItemSlider() {
       <div className='relative h-full   '>
         <img
           className='h-full cursor-pointer w-full max-sm:object-cover  rounded-xl max-sm:rounded-none mb-5 border-orange-500'
-          src={`image-product-${index + 1}.jpg`}
+          src={`image-product-${index + 1}.jpg` }
+          alt='snickers photo'
           onClick={() => setOpen(true)}
         />
         <div className='md:hidden'>
         <button 
+        aria-label="Previous image"
         onClick={handlePrevImg}
         className={"left-2 "+classImgBtn} >
         <div className='mr-1'>
@@ -49,6 +51,7 @@ export default function ItemSlider() {
         </div>
         </button>
         <button
+        aria-label="Next image"
         className={'right-2 '+classImgBtn} 
         onClick={handleNextImg}
         >
@@ -61,16 +64,16 @@ export default function ItemSlider() {
         
         <div className='grid grid-cols-4 gap-4 cursor-pointer max-md:hidden'>
           <div className={`w-full rounded-2xl border-2 ${index === 0 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 0 ? classActive : ''} `} src='image-product-1-thumbnail.jpg' onClick={() => setIndex(0)} />
+            <img alt='snickers thumbnail 1' className={`${classThumbnail} ${index === 0 ? classActive : ''} `} src='image-product-1-thumbnail.jpg' onClick={() => setIndex(0)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 1 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 1 ? classActive : ''}`} src='image-product-2-thumbnail.jpg' onClick={() => setIndex(1)} />
+            <img alt='snickers thumbnail 2' className={`${classThumbnail} ${index === 1 ? classActive : ''}`} src='image-product-2-thumbnail.jpg' onClick={() => setIndex(1)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 2 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 2 ? classActive : ''}`} src='image-product-3-thumbnail.jpg' onClick={() => setIndex(2)} />
+            <img alt='snickers thumbnail 3' className={`${classThumbnail} ${index === 2 ? classActive : ''}`} src='image-product-3-thumbnail.jpg' onClick={() => setIndex(2)} />
           </div>
           <div className={`w-full rounded-2xl border-2 ${index === 3 ? "border-orange-500" : "border-transparent"}`}>
-            <img className={`${classThumbnail} ${index === 3 ? classActive : ''}`} src='image-product-4-thumbnail.jpg' onClick={() => setIndex(3)} />
+            <img alt='snickers thumbnail 4' className={`${classThumbnail} ${index === 3 ? classActive : ''}`} src='image-product-4-thumbnail.jpg' onClick={() => setIndex(3)} />
           </div>
         </div>
       </div>

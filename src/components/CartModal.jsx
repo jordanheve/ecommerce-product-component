@@ -14,7 +14,7 @@ export default function CartModal() {
   return (
     <>
         <Popover >
-            <Popover.Button>
+            <Popover.Button aria-label="Open shopping cart">
             <div className='relative'>
         <ShoppingCartIcon className='h-6 cursor-pointer mt-2'/>
         <span className='absolute bg-orange-500 rounded-full w-5 text-[.6rem] top-[-6px] left-3 flex items-center justify-center text-white font-bold'>
@@ -50,7 +50,7 @@ export default function CartModal() {
                         {
                             order.map(item => (
                             <div className='flex justify-between gap-2 items-center' key={item.id}>
-                                <img src={item.imageUrl} className='h-12 rounded-lg'/>
+                                <img alt='item thumbnail' src={item.imageUrl} className='h-12 rounded-lg'/>
                                 <div className='text-slate-600'>
                                 <p>{item.name}</p>
                                 <div className='flex items-center h-8  gap-2'>
@@ -67,6 +67,7 @@ export default function CartModal() {
                                 </div>
                                 </div>
                                 <button
+                                    aria-label='Remove Item'
                                     className='h-4 mt-1'
                                     onClick={() => removeFromCart(item.id)}
                                 >
