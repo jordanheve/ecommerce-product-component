@@ -14,13 +14,11 @@ export default function CartModal() {
   return (
     <>
         <Popover >
-            <Popover.Button aria-label="Open shopping cart">
-            <div className='relative'>
+            <Popover.Button className='relative' aria-label="Open shopping cart">
         <ShoppingCartIcon className='h-6 cursor-pointer mt-2'/>
-        <span className='absolute bg-orange-500 rounded-full w-5 text-[.6rem] top-[-6px] left-3 flex items-center justify-center text-white font-bold'>
+        <span className='absolute bg-orange-500 rounded-full w-5 text-[.6rem] top-1 left-3 flex items-center justify-center text-white font-bold'>
             {order.length > 0 ? total : null}
-        </span>    
-            </div>
+        </span>      
             </Popover.Button>
             <Transition
                 as={Fragment}

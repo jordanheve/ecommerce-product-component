@@ -46,18 +46,14 @@ export default function ItemSlider() {
         aria-label="Previous image"
         onClick={handlePrevImg}
         className={"left-2 "+classImgBtn} >
-        <div className='mr-1'>
-        <IconPrevious className="stroke-slate-800 hover:stroke-orange-500"/>
-        </div>
+        <IconPrevious className="mr-1 stroke-slate-800 hover:stroke-orange-500"/>
         </button>
         <button
         aria-label="Next image"
         className={'right-2 '+classImgBtn} 
         onClick={handleNextImg}
         >
-         <div className='ml-1'>
-        <IconNext className="stroke-slate-800 hover:stroke-orange-500"/>
-        </div>
+        <IconNext className="ml-1 stroke-slate-800 hover:stroke-orange-500"/>
         </button>
         </div>
       </div>

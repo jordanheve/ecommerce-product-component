@@ -57,8 +57,8 @@ export default function ItemPrice() {
             className='bg-slate-100 p-2 rounded-md flex justify-between items-center h-12'
             >   
                 <button
+                    aria-label='rest item count'
                     type='button'
-                    className='rounded-l-lg '
                     onClick={handleRestCount}
                 >
                     <MinusSmallIcon className='stroke-[2.5] h-6 text-orange-500 hover:text-orange-400'/>
@@ -67,8 +67,8 @@ export default function ItemPrice() {
                     {itemCount}
                 </span>
                 <button
+                    aria-label='rest item count'
                     type='button'
-                    className=''
                     onClick={()=> setItemCount(itemCount+1)}
                 >
                     <PlusSmallIcon className='stroke-[2.5] h-6 text-orange-500 hover:text-orange-400 '/>
